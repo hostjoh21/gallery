@@ -1,0 +1,5 @@
+{
+  "supabaseUrl": "https://YOUR-PROJECT-ID.supabase.co",
+  "anonKey": "YOUR-ANON-PUBLIC-KEY",
+  "title": "My Gallery"
+}

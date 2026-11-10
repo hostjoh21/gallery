@@ -1,10 +1,8 @@
 import './globals.css';
 
-const title = process.env.NEXT_PUBLIC_SITE_TITLE || 'Gallery';
-
 export const metadata = {
-  title,
-  description: `Picha na video: ${title}`,
+  title: process.env.NEXT_PUBLIC_SITE_TITLE || 'Gallery',
+  description: 'Photos and videos',
 };
 
 export const viewport = {
@@ -14,7 +12,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="sw">
+    <html lang="en">
       <body>{children}</body>
     </html>
   );

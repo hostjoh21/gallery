@@ -130,3 +130,28 @@ Gallery (folder kuu, ndiyo unayoshare)
 - **Sub-folders ndani ya albamu** zinaingizwa kwenye albamu ile ile (hakuna ngazi ya tatu kwenye website).
 - **Files zilizo moja kwa moja kwenye folder kuu** zinaonekana juu kabisa, bila kichwa.
 - Albamu zikiwa zaidi ya moja, kuna viungo vya kuruka juu ya ukurasa.
+
+
+---
+
+## Kuweka kwenye cPanel (website ni static, haihitaji Node.js)
+
+Website sasa ni **static** (HTML + JS) na inasoma orodha ya picha moja kwa moja kutoka Supabase kila mtu anapoifungua. Kwa hiyo **inapakiwa mara moja tu**: ukibadilisha Drive, hakuna cha kupakia upya.
+
+1. Pata `gallery-cpanel.zip` (ni toleo lililojengwa tayari, kwa hiyo hauhitaji kujenga chochote).
+2. cPanel → **File Manager** → fungua `public_html` (au folder ya subdomain, mfano `gallery.jinalako.com`).
+3. **Upload** zip → bonyeza kulia zip → **Extract** → futa zip. `index.html` iwe moja kwa moja ndani ya folder, siyo ndani ya sub-folder.
+4. Bonyeza kulia `config.json` → **Edit** → weka thamani zako:
+   ```json
+   {
+     "supabaseUrl": "https://xxxx.supabase.co",
+     "anonKey": "eyJ...anon-public-key",
+     "title": "PHOTOS 2026"
+   }
+   ```
+   Tumia **anon public** key tu. `service_role` isiwekwe hapa kamwe.
+5. Fungua domain yako kwenye browser. Gallery inapaswa kuonekana.
+
+Weka kwenye **mizizi ya domain au subdomain**, siyo kwenye folder ndogo (`jinalako.com/gallery/`), kwa sababu faili za website zinatafutwa kuanzia mzizi.
+
+Kubadilisha jina la gallery baadaye: hariri `title` kwenye `config.json`, hakuna kingine.
